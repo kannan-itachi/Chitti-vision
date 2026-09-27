@@ -1,0 +1,19 @@
+{
+  "name": "chitti-vision",
+  "version": "3.0.0",
+  "private": true,
+  "description": "CHITTI VISION 3.0 — Enthiran-style vision + voice HUD (React client, Node brain server)",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n brain,hud -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm start -w server",
+    "models": "node scripts/fetch-models.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
